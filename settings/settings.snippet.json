@@ -1,0 +1,5 @@
+{
+    "git.blame.statusBarItem.enabled": true,
+    "git.blame.statusBarItem.template": "${authorName} (${authorDateAgo})",
+    "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})"
+}

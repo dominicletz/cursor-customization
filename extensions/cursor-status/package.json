@@ -1,0 +1,30 @@
+{
+  "name": "cursor-status",
+  "displayName": "Cursor Status",
+  "description": "Show Cursor vs Other model spend in the status bar",
+  "version": "0.0.1",
+  "publisher": "dominicletz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominicletz/cursor-customization"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorStatus.refreshSpend",
+        "title": "Cursor Status: Refresh spend"
+      },
+      {
+        "command": "cursorStatus.openSpend",
+        "title": "Cursor Status: Open Spending dashboard"
+      }
+    ]
+  }
+}
