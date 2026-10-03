@@ -1,6 +1,6 @@
 # cursor-customization
 
-Personal customizations for the Cursor IDE: the status bar and the user-level rules.
+Personal customizations for the Cursor IDE: the status bar, the user-level rules, and a pointer to the cursor-shunt tool.
 
 ## What it does
 
@@ -140,6 +140,17 @@ You can also copy the files by hand. Cursor does not need a restart.
 
 If you edit a rule in `~/.cursor/rules/` directly, copy the file back to `rules/`
 before you commit.
+
+## cursor-shunt (hooks and skills)
+
+The large-file read hooks and the `bulk-reader` and `code-writer` skills come from a
+separate project: [cursor-shunt](https://github.com/dominicletz/cursor-shunt).
+This repo does not copy those files, so they cannot go out of date here.
+
+Install cursor-shunt globally, so that every project uses it. Do not install it for
+one project only. For the install steps, see the
+[cursor-shunt README](https://github.com/dominicletz/cursor-shunt#readme).
+The steps can change there, so follow that README and not a copy of it.
 
 ## How the `Cursor/Other` numbers work
 
