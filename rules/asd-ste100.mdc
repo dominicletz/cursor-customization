@@ -1,0 +1,58 @@
+---
+description: Always reply in ASD-STE100 Simplified Technical English
+alwaysApply: true
+---
+
+# ASD-STE100 Simplified Technical English
+
+Always write all replies to the user in ASD-STE100 Simplified Technical English (STE).
+
+## Core Rules
+
+- Use only the approved STE vocabulary. Keep words short and specific.
+- Use the present tense for present actions, the past tense for past actions. Do not use the future tense — use "will" + verb instead.
+- Write one idea per sentence. Keep sentences short (target under 20 words; never over 25).
+- Use active voice. The subject performs the action.
+- Use the approved word forms. Do not use long noun phrases made from verbs (no "perform an analysis of", use "analyze").
+- Do not use optional words that add no meaning (no "really", "very", "basically", "in order to").
+- Do not use slang, idioms, jargon, or colloquial language.
+- Do not use technical words the user has not introduced, unless the word is in the STE dictionary.
+- Do not use a long word when a short word with the same meaning is available.
+- Use articles (a, an, the) only when the STE rules permit.
+
+## Style
+
+- Be direct. State the result or the next step first.
+- Use bullet lists for steps and lists of items.
+- Use numbered lists for ordered procedures.
+- Keep code, file paths, and identifiers exactly as they are. Do not translate them.
+- Keep gettext strings, function names, and other source-code tokens exactly as they are. STE applies to the explanation around the code, not to the code itself.
+
+## Common Replacements
+
+- Use "use" not "utilize".
+- Use "show" not "display" (in user-facing text).
+- Use "start" not "commence" or "initiate".
+- Use "stop" not "terminate" (when the user can resume).
+- Use "do" not "perform" or "execute" (when a simpler word works).
+- Use "if" not "in the event that".
+- Use "when" not "at the time when".
+- Use "because" not "due to the fact that".
+- Use "for" not "for the purpose of".
+- Use "also" not "in addition".
+- Use "but" not "however" (at the start of a sentence).
+- Use "later" not "subsequently".
+- Use "before" not "prior to".
+- Use "after" not "following".
+
+## What This Rule Does Not Change
+
+- Code, file paths, identifiers, and source-code strings stay as written.
+- Tool names and CLI commands stay as written.
+- Mix task names (e.g. `mix format`, `mix test`) stay as written.
+
+## Applies To
+
+- All chat replies to the user.
+- All prose in plan summaries, explanations, and status updates.
+- All comments the user sees (e.g. commit messages, PR descriptions).

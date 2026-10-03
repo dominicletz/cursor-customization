@@ -1,6 +1,6 @@
 # cursor-customization
 
-Personal customizations for the Cursor IDE status bar.
+Personal customizations for the Cursor IDE: the status bar and the user-level rules.
 
 ## What it does
 
@@ -25,6 +25,8 @@ This repo replaces them with:
 | `scripts/apply_settings.py` | Merges the settings snippet into `settings.json`. |
 | `scripts/hide-status-items.sh` | Hides (or restores) the built-in AI status items. |
 | `scripts/install-extension.sh` | Packages and installs the extension. |
+| `rules/` | User-level Cursor rules (`.mdc` files). |
+| `scripts/install-rules.sh` | Copies the rules to `~/.cursor/rules/`. |
 
 ## Requirements
 
@@ -51,7 +53,7 @@ If Cursor is still running, `install.sh` skips the hide step and tells you.
 Cursor can undo the hide step when it quits. Quit Cursor, then run
 `scripts/hide-status-items.sh`.
 
-Options for `install.sh`: `--skip-settings`, `--skip-hide`, `--skip-extension`.
+Options for `install.sh`: `--skip-settings`, `--skip-hide`, `--skip-extension`, `--skip-rules`.
 
 ## Manual install
 
@@ -104,6 +106,41 @@ Or use the Command Palette: `Extensions: Install from VSIX...`.
 
 Then run `Developer: Reload Window`.
 
+## Rules
+
+The `rules/` folder holds user-level Cursor rules. Cursor applies them in every
+project. Each rule has `alwaysApply: true`, so Cursor adds it to every chat.
+
+| File | What it does |
+|------|--------------|
+| `rules/asd-ste100.mdc` | Makes the agent write all replies in ASD-STE100 Simplified Technical English. |
+| `rules/subagent-model-inherit.mdc` | Makes subagents use the model of the parent agent. The agent must not pick a model for a subagent. |
+
+### Install the rules
+
+Run:
+
+```bash
+scripts/install-rules.sh
+```
+
+The script copies each `rules/*.mdc` file to `~/.cursor/rules/`.
+
+- If the file in `~/.cursor/rules/` is the same, the script does nothing.
+- If the file is different, the script saves it as `<name>.mdc.bak`, then copies the new file.
+- `scripts/install.sh` also runs this script. Use `--skip-rules` to skip it.
+
+You can also copy the files by hand. Cursor does not need a restart.
+
+### Change or add a rule
+
+1. Edit or add a file in `rules/` in this repo.
+2. Run `scripts/install-rules.sh`.
+3. Commit the change.
+
+If you edit a rule in `~/.cursor/rules/` directly, copy the file back to `rules/`
+before you commit.
+
 ## How the `Cursor/Other` numbers work
 
 The extension reads your Cursor sign-in token from the local Cursor state database
@@ -142,6 +179,7 @@ scripts/hide-status-items.sh --show
 ```
 
 Then remove the keys from `settings/settings.snippet.json` in your `settings.json`.
+To remove the rules, delete the matching files from `~/.cursor/rules/`.
 
 ## License
 

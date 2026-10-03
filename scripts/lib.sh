@@ -12,8 +12,9 @@ esac
 SETTINGS_FILE="$CURSOR_USER_DIR/settings.json"
 STATE_DB="$CURSOR_USER_DIR/globalStorage/state.vscdb"
 EXTENSIONS_DIR="$HOME/.cursor/extensions"
+RULES_DIR="$HOME/.cursor/rules"
 
-export REPO_DIR CURSOR_USER_DIR SETTINGS_FILE STATE_DB EXTENSIONS_DIR
+export REPO_DIR CURSOR_USER_DIR SETTINGS_FILE STATE_DB EXTENSIONS_DIR RULES_DIR
 
 require() {
   command -v "$1" >/dev/null 2>&1 || { echo "Missing tool: $1" >&2; exit 1; }

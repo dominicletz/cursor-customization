@@ -1,0 +1,21 @@
+---
+description: Subagents must inherit the parent model unless the user names one
+alwaysApply: true
+---
+
+# Subagent model inheritance
+
+When calling the Task tool (subagents):
+
+- Do **not** set `model` unless the user explicitly names a model for that subagent.
+- Omit `model` so the subagent inherits the parent agent’s model.
+- Never pick `gpt-5.6-*`, Claude, Composer, or other models on your own — including for `/simplify`, reviews, explore-style work, or parallel helpers.
+- If a command says “use the same model as the parent,” that means omit `model`, not choose a different slug from the allowlist.
+
+```text
+❌ BAD — invented model choice
+Task(..., model: "gpt-5.6-terra-medium")
+
+✅ GOOD — inherit parent
+Task(...)   // no model field
+```
